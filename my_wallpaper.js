@@ -1,6 +1,7 @@
 //your parameter variables go here!
 let headHeight = 75
 let lilypadWidth = 150
+let frog;
 
 
 function setup_wallpaper(pWallpaper) {
@@ -19,6 +20,7 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+  
   fill(50, 130, 44)//dark green
 
   noStroke()
@@ -57,10 +59,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   fill(186, 194, 255)//purple
 
-  arc(60, 40, 30, 30, 0, 180, CHORD)//eyelids
-  arc(140, 40, 30, 30, 0, 180, CHORD)
+  arc(60, 40, 30, 30, 225, 315, CHORD)//upper eyelids
+  arc(140, 40, 30, 30, 225, 315, CHORD)
+  arc(60, 40, 30, 30, 10, 170, CHORD)//lower eyelids
+  arc(140, 40, 30, 30, 10, 170, CHORD)
 
   noFill()
   triangle(100, 60, 90, 70, 110, 70)//nose
   arc(100, 75, 90, 50, 0, 180)//mouth
+
 }
