@@ -1,6 +1,6 @@
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
+let headHeight = 75
+let lilypadWidth = 150
 
 
 function setup_wallpaper(pWallpaper) {
@@ -19,12 +19,10 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  angleMode()
-  
   fill(50, 130, 44)//dark green
 
   noStroke()
-  ellipse(100, 150, 150, 50)//lilypad
+  ellipse(100, 150, lilypadWidth, 50)//lilypad
   
   stroke(1)
   fill(148, 230, 135)//green
@@ -45,7 +43,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   rect(50, 75, 25, 85)//front legs
   rect(125, 75, 25, 85)
 
-  ellipse(100, 75, 125, 75)//head
+  ellipse(100, 75, 125, headHeight)//head
 
   fill(255)//white
 
