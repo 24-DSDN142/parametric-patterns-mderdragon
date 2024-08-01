@@ -1,11 +1,11 @@
 //your parameter variables go here!
-let headHeight = 75
-let lilypadWidth = 150
-
+let frogScale = 0.5
+let frogX = 50
+let frogY = 50
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
@@ -13,6 +13,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 100;
+
 }
 
 function wallpaper_background() {
@@ -21,10 +22,15 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
+  noStroke()
   fill(50, 130, 44)//dark green
 
-  noStroke()
-  ellipse(100, 150, lilypadWidth, 50)//lilypad
+  push()
+
+  translate(frogX, frogY)
+  scale(frogScale)
+  
+  ellipse(100, 150, 150, 50)//frog lilypad
   
   stroke(1)
   fill(148, 230, 135)//green
@@ -45,7 +51,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   rect(50, 75, 25, 85)//front legs
   rect(125, 75, 25, 85)
 
-  ellipse(100, 75, 125, headHeight)//head
+  ellipse(100, 75, 125, 75)//head
 
   fill(255)//white
 
@@ -69,6 +75,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   circle(95, 70, 4)
   circle(105, 70, 4)//nose
   arc(100, 75, 90, 50, 0, 180)//mouth
+
+  pop()
+
   
 
 }
