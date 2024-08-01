@@ -1,18 +1,19 @@
 //your parameter variables go here!
-let frogScale = 0.5
-let frogX = 50
-let frogY = 50
-
+let frogScale = 0.6
+let cutX = 45
+let cutY = 180
+let centreFrog = 40
+let cutWidth = 100
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
+  pWallpaper.grid_settings.row_offset  = 0;
 
 }
 
@@ -25,9 +26,18 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   noStroke()
   fill(50, 130, 44)//dark green
 
+  ellipse(180, 30, 90, 40)//background lilypads
+  ellipse(45, 180, 60, 25)
+
+  fill(83, 212, 245)//pond blue
+
+  triangle(cutX, cutY, 230, cutWidth, 200, 50)//lilypad cut
+  
   push()
 
-  translate(frogX, frogY)
+  fill(50, 130, 44)//dark green
+  
+  translate(centreFrog, centreFrog)
   scale(frogScale)
   
   ellipse(100, 150, 150, 50)//frog lilypad
