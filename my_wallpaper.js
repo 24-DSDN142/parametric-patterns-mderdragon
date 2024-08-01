@@ -1,9 +1,9 @@
 //your parameter variables go here!
 let frogScale = 0.6
-let cutX = 45
-let cutY = 180
 let centreFrog = 40
-let cutWidth = 100
+let cutWidth = 20
+let cutLocation = false
+let 
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -26,13 +26,54 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   noStroke()
   fill(50, 130, 44)//dark green
 
-  ellipse(180, 30, 90, 40)//background lilypads
-  ellipse(45, 180, 60, 25)
+  if(cutLocation == true) {
+    arc(180, 30, 90, 40, 60, cutWidth)//background lilypads with upper cut
+    ellipse(45, 180, 60, 25)
+}  else {
+      arc(45, 180, 60, 25, 60, cutWidth)//lower cut
+      ellipse(180, 30, 90, 40)
+    }
 
-  fill(83, 212, 245)//pond blue
+  push()
 
-  triangle(cutX, cutY, 230, cutWidth, 200, 50)//lilypad cut
+  if(cutLocation == true) {
+  translate(-45, 165)
+  scale(0.5)
+}
+
+  stroke(1)
+  fill(255, 122, 198)//pink
+
+  push()
+  translate(200, 15)//right petal
+  rotate(45)
+  ellipse(0, 0, 20, 50)
+  pop()
   
+  push()
+  translate(160, 15)//left petal
+  rotate(315)
+  ellipse(0, 0, 20, 50)
+  pop()
+
+  ellipse(180, 10, 20, 50)//centre petal
+
+  fill(255, 181, 223)//pale pink
+
+  push()
+  translate(195, 30)//lower right petal
+  rotate(70)
+  ellipse(0, 0, 15, 30)
+  pop()
+
+  push()
+  translate(165, 30)//lower left petal
+  rotate(290)
+  ellipse(0, 0, 15, 30)
+  pop()
+
+  pop()
+
   push()
 
   fill(50, 130, 44)//dark green
