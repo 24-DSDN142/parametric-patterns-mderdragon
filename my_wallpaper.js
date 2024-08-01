@@ -2,8 +2,9 @@
 let frogScale = 0.6
 let centreFrog = 40
 let cutWidth = 20
-let cutLocation = false
-let 
+let cutLocation = true
+let sleepX = 170
+let sleepY = 10
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -116,10 +117,18 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   fill(186, 194, 255)//purple
 
-  arc(60, 40, 30, 30, 225, 315, CHORD)//upper eyelids
-  arc(140, 40, 30, 30, 225, 315, CHORD)
   arc(60, 40, 30, 30, 10, 170, CHORD)//lower eyelids
   arc(140, 40, 30, 30, 10, 170, CHORD)
+  arc(60, 40, 30, 30, sleepX, sleepY, CHORD)//upper eyelids
+  arc(140, 40, 30, 30, sleepX, sleepY, CHORD)
+
+  if(sleepX == 170) {
+    fill(0)
+    textSize(20)
+    text('Z', 15, 70)
+    text('Z', 0, 50)
+    text('Z', -15, 30)
+  }
 
   noFill()
   circle(100, 65, 4)
