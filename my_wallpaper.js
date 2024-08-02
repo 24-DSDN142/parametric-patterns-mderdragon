@@ -2,15 +2,15 @@
 let frogScale = 0.6
 let centreFrog = 40
 let cutWidth = 20
-let cutLocation = false
-let sleepX = 225
-let sleepY = 315
-let rippleSize = 1
+let cutLocation = true
+let sleepX = 170
+let sleepY = 10
+let rippleSize = 1.8
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
