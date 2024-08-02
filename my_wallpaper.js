@@ -2,9 +2,10 @@
 let frogScale = 0.6
 let centreFrog = 40
 let cutWidth = 20
-let cutLocation = true
-let sleepX = 170
-let sleepY = 10
+let cutLocation = false
+let sleepX = 225
+let sleepY = 315
+let rippleSize = 1
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -24,6 +25,26 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
+  noFill()
+  stroke(163, 237, 255)//light blue
+
+  push()
+
+  translate(0, 0)
+  scale(rippleSize)
+
+  ellipse(150, 160, 50, 20)//ripples
+  ellipse(150, 160, 40, 10)
+  ellipse(150, 160, 30, 0)
+  ellipse(10, 100, 50, 20)
+  ellipse(10, 100, 40, 10)
+  ellipse(10, 100, 30, 0)
+  ellipse(90, 30, 50, 20)
+  ellipse(90, 30, 40, 10)
+  ellipse(90, 30, 30, 0)
+  pop()
+
+
   noStroke()
   fill(50, 130, 44)//dark green
 
@@ -38,7 +59,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   push()
 
   if(cutLocation == true) {
-  translate(-45, 165)
+  translate(-45, 165)//move waterlily
   scale(0.5)
 }
 
@@ -79,7 +100,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   fill(50, 130, 44)//dark green
   
-  translate(centreFrog, centreFrog)
+  translate(centreFrog, centreFrog)//centre and scale frog
   scale(frogScale)
   
   ellipse(100, 150, 150, 50)//frog lilypad
@@ -122,7 +143,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   arc(60, 40, 30, 30, sleepX, sleepY, CHORD)//upper eyelids
   arc(140, 40, 30, 30, sleepX, sleepY, CHORD)
 
-  if(sleepX == 170) {
+  if(sleepX == 170) { //sleeping
     fill(0)
     textSize(20)
     text('Z', 15, 70)
@@ -131,13 +152,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   }
 
   noFill()
-  circle(100, 65, 4)
+  circle(100, 65, 4)//nose
   circle(95, 70, 4)
-  circle(105, 70, 4)//nose
+  circle(105, 70, 4)
   arc(100, 75, 90, 50, 0, 180)//mouth
 
   pop()
-
   
 
 }
